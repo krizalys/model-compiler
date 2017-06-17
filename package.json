@@ -1,0 +1,28 @@
+{
+  "name": "model-compiler",
+  "license": "BSD-3-Clause",
+  "author": {
+    "name": "Christophe Vidal",
+    "email": "support@krizalys.com",
+    "url": "http://www.krizalys.com/"
+  },
+  "dependencies": {
+    "json-schema-ref-parser": "3.1.2"
+  },
+  "devDependencies": {
+    "@types/chai": "4.0.0",
+    "@types/mocha": "2.2.41",
+    "@types/node": "7.0.31",
+    "@types/typescript": "2.0.0",
+    "chai": "4.0.2",
+    "leche": "2.1.2",
+    "mocha": "3.4.2",
+    "ts-node": "3.0.6",
+    "typescript": "2.3.4"
+  },
+  "scripts": {
+    "test": "npm run test:unit && npm run test:functional",
+    "test:functional": "mocha --reporter dot --compilers ts:ts-node/register 'test/functional/**/*Test.ts'",
+    "test:unit": "mocha --reporter dot --compilers ts:ts-node/register 'test/unit/**/*Test.ts'"
+  }
+}
